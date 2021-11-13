@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
+
+
+    <main>
+        <div>MARCAS</div>
+        <p>En nuestra red de concesionarias tenemos variedad de autos de importantes marcas como:</p>
+        <div class="container-tarjetas">
+            <% marcas.forEach(marca => { %>
+            <div class="tarjeta">
+                <div class="title">
+                    <h3><%= marca  %> </h3>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <!-- footer-->
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

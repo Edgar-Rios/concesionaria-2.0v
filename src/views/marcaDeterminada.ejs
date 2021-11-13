@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head') %>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="container-autos">
+            <div class="nombre-marca">
+                <h2><%= autos[0].marca %> </h2>
+            </div>
+            <% autos.forEach(auto => { %>
+            <div class="tarjeta auto">
+                <div class="info-card">
+                    <div>modelo: </div>
+                    <h5><%= auto.modelo.trim() %> </h5>
+                    <hr>
+                    <div>año:</div>
+                    <h5><%= auto.anio %> </h5>
+                    <hr>
+                    <div>color: </div>
+                    <h5 class="color-box"><%= auto.color %> </h5>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </main>
+    <script>
+        let cajas = document.querySelectorAll('h5.color-box')
+        cajas.forEach(caja => {
+            caja.style.backgroundColor = caja.innerHTML
+        });
+    </script>
+</body>
+
+</html>

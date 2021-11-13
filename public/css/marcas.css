@@ -1,0 +1,11 @@
+.container-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-tarjetas .tarjeta {
+    padding: 10px;
+    text-transform: uppercase;
+    width: 200px;
+}

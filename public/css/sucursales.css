@@ -1,0 +1,22 @@
+
+.tarjeta {
+    background-color: gainsboro;
+    margin: 10px;
+    color: black;
+    padding: 5px;
+}
+
+.tarjeta .title {
+    color: gold;
+    background-color: brown;
+    border: 2px ridge white;
+}
+
+.tarjeta .info-card span {
+    text-align: left;
+}
+
+.tarjeta .info-card hr {
+    width: 95%;
+    margin: 0 auto;
+}

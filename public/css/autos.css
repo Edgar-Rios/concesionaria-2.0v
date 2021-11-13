@@ -1,0 +1,33 @@
+.container-autos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.container-autos .nombre-marca {
+    text-transform: uppercase;
+    text-decoration: solid;
+    background-color: rgb(49, 89, 223);
+    width: 100%;
+}
+
+.container-autos .tarjeta.auto {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container-autos .tarjeta.auto .info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container-autos .tarjeta.auto .color-box {
+    width: 50px;
+    border: white 2px dotted;
+}
