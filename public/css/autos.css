@@ -28,6 +28,7 @@
 }
 
 .container-autos .tarjeta.auto .color-box {
-    width: 50px;
-    border: white 2px dotted;
+    width: 70px;
+    border: white 2px solid;
+    padding: 3px;
 }

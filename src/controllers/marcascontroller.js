@@ -9,7 +9,8 @@ let controller = {
     },
 
     marca: (req, res) => {
-        let autos = db.queryAutosPorMarca(req.params.marca)
+        let marca = req.params.marca.toLowerCase()
+        let autos = db.queryAutosPorMarca(marca)
         if (autos.length>0) {
             res.render('marcaDeterminada', {autos: autos})
         } else {

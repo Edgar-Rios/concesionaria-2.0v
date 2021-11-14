@@ -32,7 +32,7 @@ let queryMarcas = () => {
 
 let queryAutosPorMarca = (marca) => {
     let autosFiltrados = [];
-    if (queryMarcas().includes(marca.toLowerCase())) {
+    if (queryMarcas().includes(marca)) {
         queryAutos().forEach(auto => {
             if (auto.marca == marca) {
                 autosFiltrados.push(auto)
