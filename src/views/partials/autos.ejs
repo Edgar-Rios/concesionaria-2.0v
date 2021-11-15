@@ -1,0 +1,28 @@
+
+<div class="container-autos">
+    <% autos.forEach(auto => { %>
+        <div class="tarjeta auto">
+            <div class="info-card">
+                <div class="contain-marca">
+                    <div>modelo: </div>
+                    <h5><%= auto.marca.trim() %> </h5>
+                    <hr>
+                </div>
+                <div class="contain-modelo">
+                    <div>modelo: </div>
+                    <h5><%= auto.modelo.trim() %> </h5>
+                    <hr>
+                </div>
+                <div class="contain-anio">
+                    <div>año:</div>
+                    <h5><%= auto.anio %> </h5>
+                    <hr>
+                </div>
+                <div class="contain-color">
+                    <div>color: </div>
+                    <h5 class="color-box"><%= auto.color %> </h5>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+</div>

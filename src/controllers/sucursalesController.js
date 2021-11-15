@@ -21,13 +21,15 @@ let controller = {
             `)
         })
         res.end(); */
-        let sucursales = db.selectStores()
+        let sucursales = db.queryAllStores()
         console.log(sucursales)
         res.render('concesionarias', {sucursales: sucursales})
     }
     ,
     getOneStore: (req, res) => {
-
+        let sucursal = db.queryStoreWhenNombre(req.params.sucursal)
+        let autos = sucursal.autos
+        res.render('unaSucursal', {sucursal: sucursal, autos: autos})
     }
 
 }

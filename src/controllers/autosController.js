@@ -4,7 +4,8 @@ let controller = {
 
     autos: (req, res) => {
         res.send(db.queryAutos())
-    },
+    }
+    ,
     autosFiltrados: (req, res) => {
         let marca = req.params.marca
         let dato = req.params.dato
@@ -13,7 +14,7 @@ let controller = {
             let autosFiltrados = db.queryAutosPorMarca(marca)
             if (autosFiltrados.length > 0) {
                 if (dato) {
-                    autosFiltrados = db.queryWhereEqual(autosFiltrados, dato)
+                    autosFiltrados = db.queryAutoWhereEqual(autosFiltrados, dato)
                     if (autosFiltrados.length > 0) {
                         res.send(autosFiltrados)
                     }else{
@@ -34,10 +35,5 @@ let controller = {
 
     }
 }
-
-
-
-
-
 
 module.exports = controller;

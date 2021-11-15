@@ -4,9 +4,11 @@ let fs = require('fs') //FILE SYSTEM;
 //funciones
 let database = JSON.parse(fs.readFileSync('./src/database/concesionarias.json', 'utf-8'))
 
-let selectStores = () => database;
+let queryAllStores = () => database;
 
-let queryAutos = () => {
+let queryStoreWhenNombre = (nombre) =>  database.find(element => element.sucursal.toLowerCase() == nombre.toLowerCase())
+
+let queryAllAutos = () => {
     let inventarioTotal = []
     database.forEach(sucursal => {
         sucursal.autos.forEach(auto => {
@@ -17,23 +19,16 @@ let queryAutos = () => {
 }
 
 let queryMarcas = () => {
-    let marcas = []
-    let marcasFiltrada = []
-    queryAutos().forEach(auto => {
-        marcas.push(auto.marca)
-    })
-    marcas.forEach(marca => {
-        if (!marcasFiltrada.includes(marca)) {
-            marcasFiltrada.push(marca)
-        }
-    })
-    return marcasFiltrada;
+    let setMarcas = new Set()
+    queryAllAutos().forEach(auto => setMarcas.add(auto.marca))
+
+    return Array.from(setMarcas)
 }
 
 let queryAutosPorMarca = (marca) => {
     let autosFiltrados = [];
     if (queryMarcas().includes(marca)) {
-        queryAutos().forEach(auto => {
+        queryAllAutos().forEach(auto => {
             if (auto.marca == marca) {
                 autosFiltrados.push(auto)
             }
@@ -43,26 +38,18 @@ let queryAutosPorMarca = (marca) => {
 }
 
 
-let queryWhereEqual = (list, description) => {
-    /* let filterList = []
-    list.forEach(auto => {
-        if (auto.anio == description.toLowerCase() || auto.color.toLowerCase() == description.toLowerCase()) {
-            filterList.push(auto)
-        }
-    })
+let queryAutoWhereEqual = (list, description) =>  list.filter( element => element.anio == description.toLowerCase() || element.color.toLowerCase() == description.toLowerCase() )
 
-    return filterList */
-    return list.filter( element => element.anio == description.toLowerCase() || element.color.toLowerCase() == description.toLowerCase() )
-}
 
 /////
 
 module.exports = {
     database: database,
     queryMarcas: queryMarcas,
-    queryAutos: queryAutos,
+    queryAllAutos: queryAllAutos,
     queryAutosPorMarca: queryAutosPorMarca,
-    queryWhereEqual: queryWhereEqual,
-    selectStores: selectStores
+    queryAutoWhereEqual: queryAutoWhereEqual,
+    queryAllStores: queryAllStores,
+    queryStoreWhenNombre: queryStoreWhenNombre
 
 }

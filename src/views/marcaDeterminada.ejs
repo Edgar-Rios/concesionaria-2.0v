@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- head -->
 <%- include ('./partials/head') %>
 
 <body>
+    <!-- header -->
     <%- include('./partials/header') %>
 
-    <main>
-        <div class="container-autos">
-            <div class="nombre-marca">
-                <h2><%= autos[0].marca %> </h2>
-            </div>
-            <% autos.forEach(auto => { %>
-            <div class="tarjeta auto">
-                <div class="info-card">
-                    <div>modelo: </div>
-                    <h5><%= auto.modelo.trim() %> </h5>
-                    <hr>
-                    <div>año:</div>
-                    <h5><%= auto.anio %> </h5>
-                    <hr>
-                    <div>color: </div>
-                    <h5 class="color-box"><%= auto.color %> </h5>
-                </div>
-            </div>
-            <% }) %>
-        </div>
-        <%- include('./partials/footer') %> 
+    <main class="una-marca">
+        <div class="nombre-marca"><h2><%= autos[0].marca %> </h2></div>
+        <%- include('./partials/autos') %> 
+        
     </main>
-    <script>
-        let cajas = document.querySelectorAll('h5.color-box')
-        cajas.forEach(caja => {
-            caja.style.backgroundColor = caja.innerHTML
-        });
-    </script>
+    
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+    <!-- script para pintar cajas segun el color del auto-->
+    <%- include('./partials/script/carColorBox') %>
 </body>
 
 </html>

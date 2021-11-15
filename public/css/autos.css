@@ -6,13 +6,6 @@
     width: 100%;
 }
 
-.container-autos .nombre-marca {
-    text-transform: uppercase;
-    text-decoration: solid;
-    background-color: rgb(49, 89, 223);
-    width: 100%;
-}
-
 .container-autos .tarjeta.auto {
     width: 80%;
     padding: 10px;
@@ -31,4 +24,18 @@
     width: 70px;
     border: white 2px solid;
     padding: 3px;
+}
+
+.tarjeta.auto .info-card .contain-marca,
+.tarjeta.auto .info-card .contain-modelo,
+.tarjeta.auto .info-card .contain-anio,
+.tarjeta.auto .info-card .contain-color {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.una-marca .info-card .contain-marca {
+    display: none;
 }

@@ -1,11 +1,19 @@
-.container-tarjetas {
+.all-marcas .container-tarjetas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.container-tarjetas .tarjeta {
+.all-marcas .container-tarjetas .tarjeta {
     padding: 10px;
     text-transform: uppercase;
     width: 200px;
 }
+
+.una-marca .nombre-marca {
+    text-transform: uppercase;
+    text-decoration: solid;
+    background-color: rgb(49, 89, 223);
+    width: 100%;
+}
+
