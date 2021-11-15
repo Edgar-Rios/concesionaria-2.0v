@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <!-- head -->
-    <%- include('./partials/head') %>
-    <body>
-        <!-- header -->
-        <%- include('./partials/header') %> 
-        
-        <main class="inventario-autos">
+<!-- head -->
+<%- include('./partials/head') %>
 
-            <nav class="container-filtros">
-                <div class="filter-modelos">
-                    <div class="nombre-categoria"></div>
-                    <ul class="items">
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %>
 
-                    </ul>
-                </div>
-                <div class="filter-colores">
-                    <div class="nombre-categoria"></div>
-                    <ul class="items">
+    <main class="inventario-autos">
 
-                    </ul>
-                </div>
-                <div class="filter-marcas">
-                    <div class="nombre-categoria"></div>
-                    <ul class="items">
+        <nav class="container-filtros">
+            <div class="filtro filter-modelos">
+                <div class="nombre-categoria">MODELOS</div>
+                <ul class="items">
+                    <% modelos.forEach(element => { %>
+                    <li><%= element %> </li>
+                    <% }) %>
+                </ul>
+            </div>
 
-                    </ul>
-                </div>  
-                <div class="filter-anios">
-                    <div class="nombre-categoria"></div>
-                    <ul class="items">
-                        
-                    </ul>
-                </div>
-            </nav>
+            <div class="filtro filter-colores">
+                <div class="nombre-categoria">COLORES</div>
+                <ul class="items">
+                    <% colores.forEach(element => { %>
+                    <li><%= element %> </li>
+                    <% }) %>
+                </ul>
+            </div>
 
+            <div class="filtro filter-marcas">
+                <div class="nombre-categoria">MARCAS</div>
+                <ul class="items">
+                    <% marcas.forEach(element => { %>
+                    <li><%= element %> </li>
+                    <% }) %>
+                </ul>
+            </div>
 
-        </main>
-        
-        <!-- footer -->
-        <%- include('./partials/footer') %> 
-            
-    </body> 
+            <div class="filtro filter-anios">
+                <div class="nombre-categoria">AÑOS</div>
+                <ul class="items">
+                    <% anios.forEach(element => { %>
+                    <li><%= element %> </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="container-autos">
+            <%- include('./partials/autos') %> 
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+
+</body>
+    <%-  include('./partials/script/carColorBox') %> 
+
 </html>

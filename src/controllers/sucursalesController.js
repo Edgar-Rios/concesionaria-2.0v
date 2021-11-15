@@ -22,7 +22,6 @@ let controller = {
         })
         res.end(); */
         let sucursales = db.queryAllStores()
-        console.log(sucursales)
         res.render('concesionarias', {sucursales: sucursales})
     }
     ,

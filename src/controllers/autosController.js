@@ -3,7 +3,12 @@ let db = require('../database/database')
 let controller = {
 
     autos: (req, res) => {
-        res.send(db.queryAutos())
+        let marcas = db.queryMarcas()
+        let modelos = db.queryAllModelsfromAutos()
+        let colores = db.queryAllColorsfromAutos()
+        let anios = db.queryAllYearsfromAutos()
+        let autos = db.queryAllAutos()
+        res.render('inventarioAutos', {marcas: marcas, modelos: modelos, colores: colores, anios: anios, autos: autos})
     }
     ,
     autosFiltrados: (req, res) => {
